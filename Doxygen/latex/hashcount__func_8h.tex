@@ -1,0 +1,263 @@
+\hypertarget{hashcount__func_8h}{}\section{src/hashcount\+\_\+func.h File Reference}
+\label{hashcount__func_8h}\index{src/hashcount\+\_\+func.\+h@{src/hashcount\+\_\+func.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{hashcount__func_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structwordlist}{wordlist}
+\begin{DoxyCompactList}\small\item\em Is a header that provides multible Functions for hashlists and wordlists. Author\+: Parzer Florian. \end{DoxyCompactList}\item 
+struct \hyperlink{structhashlist}{hashlist}
+\begin{DoxyCompactList}\small\item\em A dynamic list of hash buckets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structwordlist}{wordlist} \hyperlink{hashcount__func_8h_a6b5561259b92a62f4c88a80208ea0389}{wordlist}
+\begin{DoxyCompactList}\small\item\em Is a header that provides multible Functions for hashlists and wordlists. Author\+: Parzer Florian. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structhashlist}{hashlist} \hyperlink{hashcount__func_8h_a8028004e48db88fd9892da1b97d4bfea}{hashlist}
+\begin{DoxyCompactList}\small\item\em A dynamic list of hash buckets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{hashcount__func_8h_ad1b217640d5373185b0ab4611b271a86}{read\+File} (\hyperlink{structhashlist}{hashlist} $\ast$$\ast$list, F\+I\+LE $\ast$file)
+\begin{DoxyCompactList}\small\item\em Reads the File and fills the hashlist with the words of the file. \end{DoxyCompactList}\item 
+void \hyperlink{hashcount__func_8h_ae43c72ed201283355c76a36c3dc99032}{add\+Wordto\+Bucket} (\hyperlink{structhashlist}{hashlist} $\ast$$\ast$list, int hash, char $\ast$word)
+\item 
+void \hyperlink{hashcount__func_8h_af5ab016cf90d6b793db2d24ab7fe6c0e}{add\+Word} (\hyperlink{structwordlist}{wordlist} $\ast$$\ast$list, char $\ast$word)
+\begin{DoxyCompactList}\small\item\em Adds a word to the wordlist. \end{DoxyCompactList}\item 
+void \hyperlink{hashcount__func_8h_af406ea8dc323ec35fd3512b182f08999}{free\+Hashlist} (\hyperlink{structhashlist}{hashlist} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Frees the with malloc allocated memory of a hashlist. \end{DoxyCompactList}\item 
+int \hyperlink{hashcount__func_8h_a02e6d7eb6a614e0f0a00a7cf82805774}{get\+Hash} (char $\ast$word)
+\begin{DoxyCompactList}\small\item\em Calculates the hashvalue of a word. \end{DoxyCompactList}\item 
+void \hyperlink{hashcount__func_8h_a7ebd0e2c75c007cfa2a268bfce63c5e5}{print\+Hashlist} (\hyperlink{structhashlist}{hashlist} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Prints the hashlist in a readable way. \end{DoxyCompactList}\item 
+void \hyperlink{hashcount__func_8h_afb73f9700e2348d754dabfbb3f85cd15}{print\+Hash\+Bucket} (\hyperlink{structhashlist}{hashlist} $\ast$list, long bucket)
+\begin{DoxyCompactList}\small\item\em Prints on bucket of the hashlist. \end{DoxyCompactList}\item 
+void \hyperlink{hashcount__func_8h_a79a2f0a71b4c8bd1716f9cb8d498d766}{print\+Buckets\+Words} (\hyperlink{structwordlist}{wordlist} $\ast$buckets, F\+I\+LE $\ast$file, F\+I\+LE $\ast$output)
+\begin{DoxyCompactList}\small\item\em Only the words who have the same hash value as the stated buckets. \end{DoxyCompactList}\item 
+void \hyperlink{hashcount__func_8h_a05d5a48c4befa15d197f866d8f8836a5}{print\+Censor\+Buckets} (\hyperlink{structwordlist}{wordlist} $\ast$buckets, F\+I\+LE $\ast$file, F\+I\+LE $\ast$output)
+\begin{DoxyCompactList}\small\item\em Prints the text of the input file in the output file and censors the words in the stated buckets. \end{DoxyCompactList}\item 
+int \hyperlink{hashcount__func_8h_a8cd45d120ec7408ca1613f1116bf5267}{contains} (char $\ast$word, \hyperlink{structwordlist}{wordlist} $\ast$buchets)
+\begin{DoxyCompactList}\small\item\em Checks if the word has the same hash value as one of the buckets. \end{DoxyCompactList}\item 
+int \hyperlink{hashcount__func_8h_ad5f58fc748f687d2f75e94502d8626c6}{compare\+Wordlist} (\hyperlink{structwordlist}{wordlist} $\ast$list1, \hyperlink{structwordlist}{wordlist} $\ast$list2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{hashcount__func_8h_a8028004e48db88fd9892da1b97d4bfea}\label{hashcount__func_8h_a8028004e48db88fd9892da1b97d4bfea}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!hashlist@{hashlist}}
+\index{hashlist@{hashlist}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{hashlist}{hashlist}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structhashlist}{hashlist} \hyperlink{structhashlist}{hashlist}}
+
+
+
+A dynamic list of hash buckets. 
+
+It is a dynamic list where each element has a pointer to the next element, a pointer to a wordlist and the hash value \mbox{\Hypertarget{hashcount__func_8h_a6b5561259b92a62f4c88a80208ea0389}\label{hashcount__func_8h_a6b5561259b92a62f4c88a80208ea0389}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!wordlist@{wordlist}}
+\index{wordlist@{wordlist}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{wordlist}{wordlist}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structwordlist}{wordlist} \hyperlink{structwordlist}{wordlist}}
+
+
+
+Is a header that provides multible Functions for hashlists and wordlists. Author\+: Parzer Florian. 
+
+A dynamic list of words
+
+It is a dynamic list where eac element has a pointer to the next element, an integer variable that is used for counting and the word itself 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{hashcount__func_8h_af5ab016cf90d6b793db2d24ab7fe6c0e}\label{hashcount__func_8h_af5ab016cf90d6b793db2d24ab7fe6c0e}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!add\+Word@{add\+Word}}
+\index{add\+Word@{add\+Word}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{add\+Word()}{addWord()}}
+{\footnotesize\ttfamily void add\+Word (\begin{DoxyParamCaption}\item[{\hyperlink{structwordlist}{wordlist} $\ast$$\ast$}]{list,  }\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+
+
+Adds a word to the wordlist. 
+
+Adds the word to the wordlist. If the word is already contained a counter is increased.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Is the wordlist in which the word is added. If it is N\+U\+LL, the list will be created. \\
+\hline
+{\em word} & The word the hash is calculated from. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hashcount__func_8h_ae43c72ed201283355c76a36c3dc99032}\label{hashcount__func_8h_ae43c72ed201283355c76a36c3dc99032}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!add\+Wordto\+Bucket@{add\+Wordto\+Bucket}}
+\index{add\+Wordto\+Bucket@{add\+Wordto\+Bucket}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{add\+Wordto\+Bucket()}{addWordtoBucket()}}
+{\footnotesize\ttfamily void add\+Wordto\+Bucket (\begin{DoxyParamCaption}\item[{\hyperlink{structhashlist}{hashlist} $\ast$$\ast$}]{list,  }\item[{int}]{hash,  }\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hashcount__func_8h_ad5f58fc748f687d2f75e94502d8626c6}\label{hashcount__func_8h_ad5f58fc748f687d2f75e94502d8626c6}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!compare\+Wordlist@{compare\+Wordlist}}
+\index{compare\+Wordlist@{compare\+Wordlist}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{compare\+Wordlist()}{compareWordlist()}}
+{\footnotesize\ttfamily int compare\+Wordlist (\begin{DoxyParamCaption}\item[{\hyperlink{structwordlist}{wordlist} $\ast$}]{list1,  }\item[{\hyperlink{structwordlist}{wordlist} $\ast$}]{list2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hashcount__func_8h_a8cd45d120ec7408ca1613f1116bf5267}\label{hashcount__func_8h_a8cd45d120ec7408ca1613f1116bf5267}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!contains@{contains}}
+\index{contains@{contains}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily int contains (\begin{DoxyParamCaption}\item[{char $\ast$}]{word,  }\item[{\hyperlink{structwordlist}{wordlist} $\ast$}]{buckets }\end{DoxyParamCaption})}
+
+
+
+Checks if the word has the same hash value as one of the buckets. 
+
+Checks if the word has the same hash value as one of the buckets by comparing it to every element of the wordlist.
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & Is the word that is checked \\
+\hline
+{\em buckets} & Are the hash values that are compaired against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the word has the same hashv alue as one of the buckets, otherwise it will return 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hashcount__func_8h_af406ea8dc323ec35fd3512b182f08999}\label{hashcount__func_8h_af406ea8dc323ec35fd3512b182f08999}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!free\+Hashlist@{free\+Hashlist}}
+\index{free\+Hashlist@{free\+Hashlist}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{free\+Hashlist()}{freeHashlist()}}
+{\footnotesize\ttfamily void free\+Hashlist (\begin{DoxyParamCaption}\item[{\hyperlink{structhashlist}{hashlist} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Frees the with malloc allocated memory of a hashlist. 
+
+It iterates over every element of the hashlist and frees every element that reserved its memory with the melloc method
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & The hashlist that schould be freed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hashcount__func_8h_a02e6d7eb6a614e0f0a00a7cf82805774}\label{hashcount__func_8h_a02e6d7eb6a614e0f0a00a7cf82805774}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!get\+Hash@{get\+Hash}}
+\index{get\+Hash@{get\+Hash}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{get\+Hash()}{getHash()}}
+{\footnotesize\ttfamily int get\+Hash (\begin{DoxyParamCaption}\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+
+
+Calculates the hashvalue of a word. 
+
+Calculates the bash of the word by summing the values of the characters and calculate the result withc modulo
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & The word the hash is calculated from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the calculated hashvalue as Integer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hashcount__func_8h_a79a2f0a71b4c8bd1716f9cb8d498d766}\label{hashcount__func_8h_a79a2f0a71b4c8bd1716f9cb8d498d766}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!print\+Buckets\+Words@{print\+Buckets\+Words}}
+\index{print\+Buckets\+Words@{print\+Buckets\+Words}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{print\+Buckets\+Words()}{printBucketsWords()}}
+{\footnotesize\ttfamily void print\+Buckets\+Words (\begin{DoxyParamCaption}\item[{\hyperlink{structwordlist}{wordlist} $\ast$}]{buckets,  }\item[{F\+I\+LE $\ast$}]{file,  }\item[{F\+I\+LE $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+
+Only the words who have the same hash value as the stated buckets. 
+
+It prints only the words that\textquotesingle{}s hash maches one of the buckets. Every other character of the input file will not be printed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buckets} & The hash values of the stated buckets \\
+\hline
+{\em file} & The input file stream \\
+\hline
+{\em output} & The output file stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hashcount__func_8h_a05d5a48c4befa15d197f866d8f8836a5}\label{hashcount__func_8h_a05d5a48c4befa15d197f866d8f8836a5}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!print\+Censor\+Buckets@{print\+Censor\+Buckets}}
+\index{print\+Censor\+Buckets@{print\+Censor\+Buckets}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{print\+Censor\+Buckets()}{printCensorBuckets()}}
+{\footnotesize\ttfamily void print\+Censor\+Buckets (\begin{DoxyParamCaption}\item[{\hyperlink{structwordlist}{wordlist} $\ast$}]{buckets,  }\item[{F\+I\+LE $\ast$}]{file,  }\item[{F\+I\+LE $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+
+Prints the text of the input file in the output file and censors the words in the stated buckets. 
+
+It prints every character of the input file in the output file. If the word is contained in the stated buckets it will be censored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buckets} & The hash values of the stated buckets \\
+\hline
+{\em file} & The input file stream \\
+\hline
+{\em output} & The output file stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hashcount__func_8h_afb73f9700e2348d754dabfbb3f85cd15}\label{hashcount__func_8h_afb73f9700e2348d754dabfbb3f85cd15}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!print\+Hash\+Bucket@{print\+Hash\+Bucket}}
+\index{print\+Hash\+Bucket@{print\+Hash\+Bucket}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{print\+Hash\+Bucket()}{printHashBucket()}}
+{\footnotesize\ttfamily void print\+Hash\+Bucket (\begin{DoxyParamCaption}\item[{\hyperlink{structhashlist}{hashlist} $\ast$}]{list,  }\item[{long}]{bucket }\end{DoxyParamCaption})}
+
+
+
+Prints on bucket of the hashlist. 
+
+Prints the stated bucket. If the words per line exeed 10 a new line is started. If the Bucket is not found it will print an error Message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & The hashlist in which the bucket will be searched in. \\
+\hline
+{\em bucket} & The hashvalue of the bucket that should be printed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hashcount__func_8h_a7ebd0e2c75c007cfa2a268bfce63c5e5}\label{hashcount__func_8h_a7ebd0e2c75c007cfa2a268bfce63c5e5}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!print\+Hashlist@{print\+Hashlist}}
+\index{print\+Hashlist@{print\+Hashlist}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{print\+Hashlist()}{printHashlist()}}
+{\footnotesize\ttfamily void print\+Hashlist (\begin{DoxyParamCaption}\item[{\hyperlink{structhashlist}{hashlist} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Prints the hashlist in a readable way. 
+
+Prints every bucket of the Hashlist in a seperate line. If the words per line exeed 10 a new line is started
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & The hashlist that will be printed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hashcount__func_8h_ad1b217640d5373185b0ab4611b271a86}\label{hashcount__func_8h_ad1b217640d5373185b0ab4611b271a86}} 
+\index{hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}!read\+File@{read\+File}}
+\index{read\+File@{read\+File}!hashcount\+\_\+func.\+h@{hashcount\+\_\+func.\+h}}
+\subsubsection{\texorpdfstring{read\+File()}{readFile()}}
+{\footnotesize\ttfamily void read\+File (\begin{DoxyParamCaption}\item[{\hyperlink{structhashlist}{hashlist} $\ast$$\ast$}]{list,  }\item[{F\+I\+LE $\ast$}]{file }\end{DoxyParamCaption})}
+
+
+
+Reads the File and fills the hashlist with the words of the file. 
+
+The method reads the file. It splits the stream at the charackters \textquotesingle{}newline\textquotesingle{}, \textquotesingle{}space\textquotesingle{}, \textquotesingle{}.\textquotesingle{}, \textquotesingle{}\+:\textquotesingle{}, \textquotesingle{},\textquotesingle{}, \textquotesingle{};\textquotesingle{}, \textquotesingle{}?\textquotesingle{} and \textquotesingle{}space\textquotesingle{}. Afterwards it stores the words in the hashlist
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & The hashlist to which the word is added. \\
+\hline
+{\em file} & The File Stream of the Input file \\
+\hline
+\end{DoxyParams}

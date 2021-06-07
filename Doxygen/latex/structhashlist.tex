@@ -1,0 +1,60 @@
+\hypertarget{structhashlist}{}\section{hashlist Struct Reference}
+\label{structhashlist}\index{hashlist@{hashlist}}
+
+
+A dynamic list of hash buckets.  
+
+
+
+
+{\ttfamily \#include $<$hashcount\+\_\+func.\+h$>$}
+
+
+
+Collaboration diagram for hashlist\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{structhashlist__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhashlist}{hashlist} $\ast$ \hyperlink{structhashlist_ac31c298110f5630adfb6e051cf8657ac}{next}
+\item 
+\hyperlink{structwordlist}{wordlist} $\ast$ \hyperlink{structhashlist_a62f143e3e8911dccb242579a7f06e973}{words}
+\item 
+int \hyperlink{structhashlist_aab67bf6a16fd9f0ae1ad7190acc95298}{hash}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A dynamic list of hash buckets. 
+
+It is a dynamic list where each element has a pointer to the next element, a pointer to a wordlist and the hash value 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structhashlist_aab67bf6a16fd9f0ae1ad7190acc95298}\label{structhashlist_aab67bf6a16fd9f0ae1ad7190acc95298}} 
+\index{hashlist@{hashlist}!hash@{hash}}
+\index{hash@{hash}!hashlist@{hashlist}}
+\subsubsection{\texorpdfstring{hash}{hash}}
+{\footnotesize\ttfamily int hashlist\+::hash}
+
+The list of words with the same hash value \mbox{\Hypertarget{structhashlist_ac31c298110f5630adfb6e051cf8657ac}\label{structhashlist_ac31c298110f5630adfb6e051cf8657ac}} 
+\index{hashlist@{hashlist}!next@{next}}
+\index{next@{next}!hashlist@{hashlist}}
+\subsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \hyperlink{structhashlist}{hashlist}$\ast$ hashlist\+::next}
+
+\mbox{\Hypertarget{structhashlist_a62f143e3e8911dccb242579a7f06e973}\label{structhashlist_a62f143e3e8911dccb242579a7f06e973}} 
+\index{hashlist@{hashlist}!words@{words}}
+\index{words@{words}!hashlist@{hashlist}}
+\subsubsection{\texorpdfstring{words}{words}}
+{\footnotesize\ttfamily \hyperlink{structwordlist}{wordlist}$\ast$ hashlist\+::words}
+
+The next bucket of the lsit 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{hashcount__func_8h}{hashcount\+\_\+func.\+h}\end{DoxyCompactItemize}
